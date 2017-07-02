@@ -26,49 +26,5 @@ namespace ElectricityPayments
             Console.WriteLine("Your result is: " + juneMonth.Summary);
             Console.ReadKey();
         }
-
-        private sealed class Tarifs
-        {
-            public double SocialNormEqualDay { get; } = 3.41;
-            public double SocialNormEqualNight { get; } = 1.67;
-            public double SocialNormNotEqualDay { get; } = 6.59;
-            public double SocialNormNotEqualNight { get; } = 3.44;
-        }
-
-        internal enum SocialNormEnum
-        {
-            Day = 53, Night = 32
-        }
-
-        public interface IMonth
-        {
-            int DayTop { get; set; }
-            int NightTop { get; set; }
-        }
-
-        public class CurrentMonth : IMonth
-        {
-            public int DayTop { get; set; }
-            public int NightTop { get; set; }
-            public double Summary { get; set; }
-
-            public CurrentMonth(int dayTop, int nightTop)
-            {
-                DayTop = dayTop;
-                NightTop = nightTop;
-            }
-        }
-
-        public class PrevMonth:IMonth
-        {
-            public int DayTop { get; set; }
-            public int NightTop { get; set; }
-
-            public PrevMonth(int dayTop, int nightTop)
-            {
-                DayTop = dayTop;
-                NightTop = nightTop;
-            }
-        }
     }
 }
