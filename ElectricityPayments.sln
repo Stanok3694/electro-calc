@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityPayments", "ElectricityPayments\ElectricityPayments.csproj", "{130034C0-F41D-4D7B-8DD8-98EB01ACC0F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestElectricityPayments", "UnitTestElectricityPayments\UnitTestElectricityPayments.csproj", "{A0FD66CD-3B4D-430F-BAA6-3EC00DDD81A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{130034C0-F41D-4D7B-8DD8-98EB01ACC0F5} = {130034C0-F41D-4D7B-8DD8-98EB01ACC0F5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{130034C0-F41D-4D7B-8DD8-98EB01ACC0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130034C0-F41D-4D7B-8DD8-98EB01ACC0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130034C0-F41D-4D7B-8DD8-98EB01ACC0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FD66CD-3B4D-430F-BAA6-3EC00DDD81A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FD66CD-3B4D-430F-BAA6-3EC00DDD81A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FD66CD-3B4D-430F-BAA6-3EC00DDD81A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FD66CD-3B4D-430F-BAA6-3EC00DDD81A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,8 +9,8 @@ namespace ElectricityPayments
             var serviceData = new ServiceFuncData();
             var tarifs = new Tarifs();
 
-            var juneMonth = new CurrentMonth(2290, 1597);
-            var mayMonth = new PrevMonth(2160, 1521);
+            var juneMonth = new CurrentMonth(2160, 1521);
+            var mayMonth = new PrevMonth(2034, 1446);
 
             var dayDeltaBtwMonths = serviceData.CreateDelta(juneMonth.DayTop, mayMonth.DayTop);
             var nightDeltaBtwMonths = serviceData.CreateDelta(juneMonth.NightTop, mayMonth.NightTop);
@@ -37,7 +37,7 @@ namespace ElectricityPayments
 
         internal enum SocialNormEnum
         {
-            Day = 53, Night = 47
+            Day = 53, Night = 32
         }
 
         public interface IMonth
