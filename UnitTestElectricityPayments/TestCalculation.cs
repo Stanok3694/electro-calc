@@ -14,7 +14,7 @@ namespace UnitTestElectricityPayments
             var secondTarif = 6.59;
             var socialNorm = 53;
 
-            var serviceData = new ServiceFuncData();
+            var serviceData = new ServiceCalc();
 
             var dayDelta = serviceData.CreateDelta(secondData, firstData);
             var actualResult = serviceData.FindPhaseSummary(dayDelta, socialNorm, firstTarif, secondTarif);

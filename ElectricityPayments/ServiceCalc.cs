@@ -1,6 +1,6 @@
 ﻿namespace ElectricityPayments
 {
-    public class ServiceFuncData
+    public class ServiceCalc
     {
         public int CreateDelta(int a, int b)
         {

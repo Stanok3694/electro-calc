@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentMonth.cs" />
-    <Compile Include="Month.cs" />
+    <Compile Include="IMonth.cs" />
     <Compile Include="PrevMonth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceFuncData.cs" />
+    <Compile Include="ServiceCalc.cs" />
     <Compile Include="SocialNorms.cs" />
     <Compile Include="Tarifs.cs" />
   </ItemGroup>
