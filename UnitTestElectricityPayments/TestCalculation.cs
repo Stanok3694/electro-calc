@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ElectricityPayments;
-using System.Math;
 
 namespace UnitTestElectricityPayments
 {
@@ -36,6 +35,7 @@ namespace UnitTestElectricityPayments
             const int daySocialNorm = 31;
 
             var serviceData = new ServiceCalc();
+
             var dayDelta = serviceData
                 .CreateDelta(currentMonthDay, previousMonthDay);
 
@@ -49,33 +49,14 @@ namespace UnitTestElectricityPayments
         [TestMethod]
         public void TestAllCircle()
         {
+            var calculator = new ServiceCalc();
             var june = new Month(2342, 1625);
             var may = new Month(2160, 1521);
 
             const double expectedResult = 1330.55;
-            var actualResult = SummaryResult(june, may);
+            var actualResult = calculator.SummaryResult(june, may);
 
             Assert.AreEqual(expectedResult, actualResult);
         }
-
-        public double SummaryResult(Month currentMonth, Month previousMonth)
-        {
-            var serviceData = new ServiceCalc();
-            var tarifs = new Tarifs();
-
-            var dayDelta = serviceData
-                .CreateDelta(currentMonth.DayTop, previousMonth.DayTop);
-            var nightDelta = serviceData.CreateDelta(currentMonth.NightTop, previousMonth.NightTop);
-
-            var daySummary = serviceData
-                .FindPhaseSummary(dayDelta, (int) SocialNormEnum.Day, tarifs.SocialNormEqualDay, tarifs.SocialNormNotEqualDay);
-            var nightSummary = serviceData.FindPhaseSummary(nightDelta, (int) SocialNormEnum.Night,
-                tarifs.SocialNormEqualNight, tarifs.SocialNormNotEqualNight);
-
-            var summary = daySummary + nightSummary;
-
-            return summary;
-        }
-
-}
+    }
 }

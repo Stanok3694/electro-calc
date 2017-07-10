@@ -1,4 +1,6 @@
-﻿namespace ElectricityPayments
+﻿using static System.Math;
+
+namespace ElectricityPayments
 {
     public class ServiceCalc
     {
@@ -22,13 +24,34 @@
         {
             var deltaBtwNorms = CreateDelta(deltaBtwMonths, socialNorm);
 
-            if (deltaBtwNorms <= 0) return SimpleSummary(deltaBtwMonths, socialNormEqualTarif);
-            return DifficultSummary(deltaBtwNorms, socialNormEqualTarif, socialNorm, socialNormNotEqualTarif);
+            return deltaBtwNorms <= 0 
+                ? SimpleSummary(deltaBtwMonths, socialNormEqualTarif) 
+                : DifficultSummary(deltaBtwNorms, socialNormEqualTarif, socialNorm, socialNormNotEqualTarif);
         }
 
         public double ResultSummary(double daySummary, double nightSummary)
         {
             return daySummary + nightSummary;
+        }
+
+        public double SummaryResult(Month currentMonth, Month previousMonth)
+        {
+            var serviceData = new ServiceCalc();
+            var tarifs = new Tarifs();
+
+            var dayDelta = serviceData
+                .CreateDelta(currentMonth.DayTop, previousMonth.DayTop);
+            var nightDelta = serviceData
+                .CreateDelta(currentMonth.NightTop, previousMonth.NightTop);
+
+            var daySummary = serviceData
+                .FindPhaseSummary(dayDelta, (int)SocialNormEnum.Day, tarifs.SocialNormEqualDay, tarifs.SocialNormNotEqualDay);
+            var nightSummary = serviceData.FindPhaseSummary(nightDelta, (int)SocialNormEnum.Night,
+                tarifs.SocialNormEqualNight, tarifs.SocialNormNotEqualNight);
+
+            var summary = ResultSummary(daySummary, nightSummary);
+
+            return Round(summary, 2);
         }
     }
 }
