@@ -6,7 +6,7 @@ namespace ElectricityPayments
     {
         private static void Main()
         {
-            var serviceData = new ServiceFuncData();
+            var serviceData = new ServiceCalc();
             var tarifs = new Tarifs();
 
             var juneMonth = new CurrentMonth(2160, 1521);
