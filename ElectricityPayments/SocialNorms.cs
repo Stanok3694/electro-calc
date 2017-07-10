@@ -2,6 +2,6 @@
 {
     public enum SocialNormEnum
     {
-        Day = 53, Night = 32
+        Day = 54, Night = 31
     }
 }

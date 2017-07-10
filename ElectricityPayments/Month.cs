@@ -1,11 +1,12 @@
 ﻿namespace ElectricityPayments
 {
-    public class PrevMonth: IMonth
+    public class Month: IMonth
     {
         public int DayTop { get; set; }
         public int NightTop { get; set; }
+        public double Summary { get; set; }
 
-        public PrevMonth(int dayTop, int nightTop)
+        public Month(int dayTop, int nightTop)
         {
             DayTop = dayTop;
             NightTop = nightTop;

@@ -9,11 +9,11 @@ namespace ElectricityPayments
             var serviceData = new ServiceCalc();
             var tarifs = new Tarifs();
 
-            var juneMonth = new CurrentMonth(2160, 1521);
-            var mayMonth = new PrevMonth(2034, 1446);
+            var june = new Month(2342, 1625);
+            var may = new Month(2160, 1521);
 
-            var dayDeltaBtwMonths = serviceData.CreateDelta(juneMonth.DayTop, mayMonth.DayTop);
-            var nightDeltaBtwMonths = serviceData.CreateDelta(juneMonth.NightTop, mayMonth.NightTop);
+            var dayDeltaBtwMonths = serviceData.CreateDelta(june.DayTop, may.DayTop);
+            var nightDeltaBtwMonths = serviceData.CreateDelta(june.NightTop, may.NightTop);
 
             var daySummary = serviceData.FindPhaseSummary(dayDeltaBtwMonths, (int) SocialNormEnum.Day,
                 tarifs.SocialNormEqualDay, tarifs.SocialNormNotEqualDay);
@@ -21,9 +21,9 @@ namespace ElectricityPayments
             var nightSumary = serviceData.FindPhaseSummary(nightDeltaBtwMonths, (int) SocialNormEnum.Night,
                 tarifs.SocialNormEqualNight, tarifs.SocialNormNotEqualNight);
 
-            juneMonth.Summary = serviceData.ResultSummary(daySummary, nightSumary);
+            june.Summary = serviceData.ResultSummary(daySummary, nightSumary);
 
-            Console.WriteLine("Your result is: " + juneMonth.Summary);
+            Console.WriteLine("Your result is: " + june.Summary);
             Console.ReadKey();
         }
     }
