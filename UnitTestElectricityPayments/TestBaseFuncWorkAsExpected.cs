@@ -1,10 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ElectricityPayments;
 
 namespace UnitTestElectricityPayments
 {
     [TestClass]
-    public class TestCalculation
+    public class TestBaseFuncWorkAsExpected
     {
         [TestMethod]
         public void TestDayPhaseSummary()
@@ -59,4 +62,14 @@ namespace UnitTestElectricityPayments
             Assert.AreEqual(expectedResult, actualResult);
         }
     }
-}
+
+    [TestClass]
+    public class TestFileSystemFuncWorkAsExpected
+    {
+        [TestMethod]
+        public void TestGetDayDataFromFile()
+        {
+            // smth about get day?...
+        }
+    }
+}   
