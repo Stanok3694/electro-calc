@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace ElectricityPayments
 {
     internal class Program
@@ -16,6 +15,41 @@ namespace ElectricityPayments
 
             Console.WriteLine("Your previous result is: " + summary1);
             Console.WriteLine("Your current result is: " + summary2);
+            
+
+            var a = DateTime.Today;
+            var currentMonth = a.Month;
+            Console.WriteLine(currentMonth);
+
+            var monthString = "";
+
+            switch (currentMonth)
+            {
+                case 1:
+                    monthString = "January";
+                    break;
+                case 2:
+                    monthString = "February";
+                    break;
+                case 3:
+                    monthString = "March";
+                    break;
+                case 4:
+                    monthString = "April";
+                    break;
+                case 5:
+                    monthString = "May";
+                    break;
+                case 6:
+                    monthString = "June";
+                    break;
+                case 7:
+                    monthString = "Jule";
+                    break;
+            }
+
+            Console.WriteLine(monthString);
+
             Console.ReadKey();
         }
     }
